@@ -1,0 +1,9 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+
+script:
+- docker run --rm --privileged -v "$(pwd)/android":/home/lineageos -e GIT_USER_NAME=jfloff -e GIT_USER_EMAIL=jfloff@inesc-id.pt -e DEVICE_CODENAME=klte -ti jfloff/lineageos lineageos init build
