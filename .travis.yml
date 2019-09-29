@@ -6,4 +6,8 @@ services:
   - docker
 
 script:
-- sudo docker run --rm --privileged -v "$(pwd)/android":/home/lineageos -e GIT_USER_NAME=jfloff -e GIT_USER_EMAIL=jfloff@inesc-id.pt -e DEVICE_CODENAME=klte -ti jfloff/lineageos lineageos init build
+- docker run --rm --privileged -v "$HOME/android":/home/lineageos -e GIT_USER_NAME=jfloff -e GIT_USER_EMAIL=jfloff@inesc-id.pt -e DEVICE_CODENAME=klte -ti jfloff/lineageos lineageos init build
+
+cache:
+  directories:
+  - $HOME/android
