@@ -9,6 +9,9 @@ jobs:
           DEVICE_CODENAME: klte 
           
     steps:
+      - pre:
+          name: Prework
+          command: mkdir /home/lineageos
       - run:
           name: Build
           command: lineageos init build 
