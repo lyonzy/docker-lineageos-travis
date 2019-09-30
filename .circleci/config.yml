@@ -8,11 +8,8 @@ jobs:
           GIT_USER_EMAIL: jfloff@inesc-id.pt
           DEVICE_CODENAME: klte 
         volumes:
-        - lineageos:/home/lineageos
+          - lineageos:/home/lineageos
     steps:
-      - run:
-          name: mkdir
-          command: mkdir /home/lineageos
       - run:
           name: chmod
           command: chmod 777 /home/lineageos
