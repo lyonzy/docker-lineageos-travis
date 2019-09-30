@@ -6,6 +6,7 @@ jobs:
     steps:
       - run:
           name: "Testing"
+          no_output_timeout: 7h
           command: |
             mkdir $HOME/android
             chmod 777 $HOME/android
