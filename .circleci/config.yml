@@ -11,7 +11,7 @@ jobs:
     steps:
       - run:
           name: Prework
-          command: mkdir /home/lineageos
+          command: sudo mkdir /home/lineageos
       - run:
           name: Build
           command: lineageos init build 
