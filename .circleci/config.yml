@@ -1,18 +1,26 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: jfloff/lineageos 
-        environment:
-          GIT_USER_NAME: jfloff
-          GIT_USER_EMAIL: jfloff@inesc-id.pt
-          DEVICE_CODENAME: klte 
-        volumes:
-          - lineageos:/home/lineageos
+    machine:
+      image: ubuntu-1604:201903-01
     steps:
       - run:
-          name: chmod
-          command: chmod 777 /home/lineageos
-      - run:
-          name: Build
-          command: lineageos init build 
+          name: "Testing"
+          command: |
+            chmod 777 $HOME/android
+            docker run --rm --privileged -v "$HOME/android":/home/lineageos -e GIT_USER_NAME=jfloff -e GIT_USER_EMAIL=jfloff@inesc-id.pt -e DEVICE_CODENAME=klte -ti jfloff/lineageos lineageos init build | awk 'NR % 100 == 0' 
+    #docker:
+    #  - image: jfloff/lineageos 
+    #    environment:
+    #      GIT_USER_NAME: jfloff
+    #      GIT_USER_EMAIL: jfloff@inesc-id.pt
+    #      DEVICE_CODENAME: klte 
+    #    volumes:
+    #      - lineageos:/home/lineageos
+    #steps:
+    #  - run:
+    #      name: chmod
+    #      command: chmod 777 /home/lineageos
+    #  - run:
+    #      name: Build
+    #      command: lineageos init build 
