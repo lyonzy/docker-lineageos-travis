@@ -7,4 +7,8 @@ jobs:
           GIT_USER_NAME: jfloff
           GIT_USER_EMAIL: jfloff@inesc-id.pt
           DEVICE_CODENAME: klte 
-        command: lineageos init build 
+          
+    steps:
+      - run:
+          name: Build
+          command: lineageos init build 
