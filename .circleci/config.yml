@@ -9,7 +9,7 @@ jobs:
           DEVICE_CODENAME: klte 
           
     steps:
-      - pre:
+      - run:
           name: Prework
           command: mkdir /home/lineageos
       - run:
