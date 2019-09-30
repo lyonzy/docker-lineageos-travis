@@ -10,8 +10,11 @@ jobs:
           
     steps:
       - run:
-          name: Prework
-          command: sudo mkdir /home/lineageos
+          name: mkdir
+          command: mkdir /home/lineageos
+      - run:
+          name: chmod
+          command: chmod 777 /home/lineageos
       - run:
           name: Build
           command: lineageos init build 
