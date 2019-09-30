@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: jfloff/lineageos 
+      image: jfloff/lineageos 
       environment:
         GIT_USER_NAME: jfloff
         GIT_USER_EMAIL: jfloff@inesc-id.pt
