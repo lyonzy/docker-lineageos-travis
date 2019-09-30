@@ -9,7 +9,8 @@ jobs:
           command: |
             mkdir $HOME/android
             chmod 777 $HOME/android
-            docker run --rm --privileged -v "$HOME/android":/home/lineageos -e MAKEFLAGS=-j8 -e GIT_USER_NAME=jfloff -e GIT_USER_EMAIL=jfloff@inesc-id.pt -e DEVICE_CODENAME=klte -ti jfloff/lineageos lineageos init build
+            #docker run --rm --privileged -v "$HOME/android":/home/lineageos -e MAKEFLAGS=-j8 -e GIT_USER_NAME=jfloff -e GIT_USER_EMAIL=jfloff@inesc-id.pt -e DEVICE_CODENAME=klte -ti jfloff/lineageos lineageos init build
+            docker run -e "BRANCH_NAME=lineage-16.0" -e "DEVICE_LIST=bacon" -v "/home/user/lineage:/srv/src" -v "/home/user/zips:/srv/zips" -v "/home/user/logs:/srv/logs" -v "/home/user/cache:/srv/ccache" lineageos4microg/docker-lineage-cicd
     #docker:
     #  - image: jfloff/lineageos 
     #    environment:
